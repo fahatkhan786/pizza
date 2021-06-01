@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Pizzateria</title>
+	<link rel="stylesheet" href="st.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+	<header id="navbar">
+		<h1><span>Good</span>Foods</h1>
+			<ul class="menu">
+					<li><a href="#Home" class="active">Home</a></li>
+					<li><a href="#Menu">Menu</a></li>
+					<li><a href="#About">About</a></li>
+					<li><a href="#Contact">Contact</a></li>
+			</ul>
+		<span class="menu_icon" onclick="menuToggle();"><i class="fas fa-bars"></i></span>
+		<span class="close_icon" onclick="menuToggle();"><i class="fas fa-times"></i></span>
+	</header>
+
+	<div class="container"> 
+		<div class="content">
+			<div class="banner" id="slideshowText">
+				<div class="active">
+					<h2> "I want <span>pizza</span><br> not our opinion"</h2>
+					<span>
+						<p> Roses are read, pizza sauce is too. I ordered a large and none of it's for you. </p>
+					</span>
+					<a href="#read">Read More</a>
+				</div>
+				<div>
+					<h2> “Surround yourself<br> with <span>pizza</span><br>  NOT <span>negativity</span>”</h2>
+					<span>
+						<p> Square box, round pizza and triangle slices.... I'm confused! </p>
+					</span>
+					<a href="#read">Read More</a>
+				</div>
+				<div>
+					<h2> "It's <span>slice</span><br> to meet you"</h2>
+					<span>
+						<p> A slice a day, keeps the sad away... </p>
+					</span>
+					<a href="#read">Read More</a>
+				</div>
+			</div>
+			<div class="banner_img" id="slideshow">
+				<img src="piza.jpg" class="active">
+				<img src="Gralic-p.jpg">
+				<img src="chi-bread-p.jpg">
+			</div>
+		</div>
+
+		<div class="icons">
+			<ul class="social">
+				<li><a href="#insta"><i class="fab fa-instagram"></i></a></li>
+				<li><a href="#twitter"><i class="fab fa-twitter"></i></a></li>
+				<li><a href="#fb"><i class="fab fa-facebook-square"></i></a></li>
+				<li><a href="#Utube"><i class="fab fa-youtube"></i></a></li>
+			</ul>
+			<ul class="controls">
+				<li><i class="fas fa-arrow-left" onclick="prev();prevText();"></i></li>
+				<li><i class="fas fa-arrow-right" onclick="next();nextText();"></i></li>
+			</ul>
+		</div>
+	</div>
+
+	<!--
+	<div class="container2">
+		<div class="content2">
+			<div class="card">
+				<div class="imgbx">
+					<img src="1.jpg">
+				</div>
+				<div class="detailbx">
+					<div>
+						<h2> One </h2>
+						<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="imgbx">
+					<img src="2.jpg">
+				</div>
+				<div class="detailbx">
+					<div>
+						<h2> Two </h2>
+						<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="imgbx">
+					<img src="3.jpg">
+				</div>
+				<div class="detailbx">
+					<div>
+						<h2> Three </h2>
+						<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="imgbx">
+					<img src="4.jpg">
+				</div>
+				<div class="detailbx">
+					<div>
+						<h2> Four </h2>
+						<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	
+		<script type="text/javascript">
+			var slideshow = document.getElementById('slideshow');
+			var slides = slideshow.getElementsByTagName('img');
+			var index = 0;
+			function next(){
+				slides[index].classList.remove('active');
+				index = (index + 1) % slides.length;
+				slides[index].classList.add('active');
+			}
+			function prev(){
+				slides[index].classList.remove('active');
+				index = (index - 1 + slides.length) % slides.length;
+				slides[index].classList.add('active');
+			}
+
+			var slideshowText = document.getElementById('slideshowText');
+			var slidesText = slideshowText.getElementsByTagName('div');
+			var i = 0;
+			function nextText(){
+				slidesText[i].classList.remove('active');
+				i = (i + 1) % slidesText.length;
+				slidesText[i].classList.add('active');
+			}
+			function prevText(){
+				slidesText[i].classList.remove('active');
+				i = (i - 1 + slidesText.length) % slidesText.length;
+				slidesText[i].classList.add('active');
+			}
+
+			function menuToggle(){
+				var nav = document.getElementById('navbar');
+				nav.classList.toggle('active')
+			}
+		</script>
+</body>
+</html>

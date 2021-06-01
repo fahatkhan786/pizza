@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+.container{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+.content{
+	position: relative;
+	display: grid;
+	width: 1000px;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.content .card{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	background: #ffc300;
+}
+.content .card:nth-child(even){
+	flex-direction: column-reverse;
+}
+.content .card .imgbx{
+	position: relative;
+	height: 250px;
+	width: 250px;
+	background: #ddd;
+}
+.content .card .imgbx img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.content .card .detailbx{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 250px;
+	width: 250px;
+	background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3));
+}
+.content .card .detailbx div{
+	padding: 20px;
+	text-align: center;
+}
+.content .card .detailbx div h2{
+	font-size: 30px;
+	font-weight: 600;
+}
+.content .card .detailbx div p{
+	font-size: 18px;
+	font-weight: 400;
+	color: #333;
+}
+
+
+@media (max-width: 992px)
+{
+	.content {
+    margin: 50px;
+	grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+    .content .card{
+	flex-direction: row;
+	margin: 10px 0;
+	}
+	.content .card:nth-child(even){
+	flex-direction: row-reverse;
+	}
+	.content .card .imgbx {
+	width: 60%;
+	}
+	.content .card .detailbx {
+	width: 40%;
+	}
+}
+@media (max-width: 767px)
+{
+    .content {
+	margin: 15px 30px;
+	}
+    .content .card{
+	flex-direction: column;
+	margin: 20px 10px;
+	}
+	.content .card:nth-child(even){
+	flex-direction: column;
+	}
+	.content .card .imgbx {
+	height: 280px;
+	width: 100%;
+	}
+	.content .card .detailbx {
+	height: 180px;
+	width: 100%;
+	}
+	.content .card .detailbx div{
+	padding: 0px;
+	}
+}
